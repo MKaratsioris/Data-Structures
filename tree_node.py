@@ -44,6 +44,7 @@ class TreeNode:
         self.children: list[TreeNode] = []
         self.parent: TreeNode = None
         self.level: int = 0
+        self.depth: int = 0
     
     def add_child(self, child: TreeNode) -> None:
         """_summary_
@@ -56,6 +57,7 @@ class TreeNode:
         child.parent = self
         self.children.append(child)
         child.level = self.level + 1
+        child.parent.depth += 1
     
     def show(self, depth: int = None) -> None:
         """_summary_
